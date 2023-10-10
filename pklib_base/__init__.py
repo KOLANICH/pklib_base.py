@@ -7,11 +7,13 @@ from functools import partial
 from io import IOBase
 from struct import Struct
 from zlib import crc32 as crc32_zlib
+from warnings import warn
 
 from .enums import CompressionType
 
 # pylint:disable=too-few-public-methods
 
+warn("We have moved from M$ GitHub to https://codeberg.org/implode-compression-impls/pklib_base.py , read why on https://codeberg.org/KOLANICH/Fuck-GuanTEEnomo .")
 
 def crc32(data: ByteString, value: int = 0) -> int:
 	return (~crc32_zlib(data, value)) & 0xFFFFFFF
